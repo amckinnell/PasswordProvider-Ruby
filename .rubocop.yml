@@ -8,14 +8,22 @@ AllCops:
 Metrics/LineLength:
   Max: 120
 
+# We are not going to line up parameters that span more than one line.
+Style/AlignParameters:
+  Enabled: false
+
+# We are going to skip top-level class documentation for katas.
+Style/Documentation:
+  Enabled: false
+
 # We like to use the hash rocket in rake files.
 Style/HashSyntax:
   Exclude:
     - "Rakefile"
 
-# We will use double quotes everywhere.
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
+# We are okay with using extend self instead of module_function.
+Style/ModuleFunction:
+  Enabled: false
 
 # We are not going to optimize by freezing strings.
 Style/MutableConstant:
@@ -25,14 +33,10 @@ Style/MutableConstant:
 Style/SignalException:
   Enabled: false
 
-# We are not going to line up parameters that span more than one line.
-Style/AlignParameters:
-  Enabled: false
+# We will use double quotes everywhere.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
 
-# We are okay with using extend self instead of module_function.
-Style/ModuleFunction:
-  Enabled: false
-
-# We are going to skip top-level class documentation for katas.
-Style/Documentation:
+# Okay to use vanilla syntax for arrays of symbols.
+Style/SymbolArray:
   Enabled: false
